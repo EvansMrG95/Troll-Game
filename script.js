@@ -19,13 +19,13 @@ class Game {
   
       command = command.toLowerCase().trim();
   
-      // Picking up an item
+      
       if (command.startsWith("pick up ")) {
         const item = command.replace("pick up ", "").trim();
         this.inventory.add(item);
         return `You picked up a ${item}.`;
   
-      // Feeding a troll
+      
       } else if (command.startsWith("feed ")) {
         const match = command.match(/feed (north|south|east|west) troll/);
         if (!match) return "Invalid feed command. Try 'feed north troll'.";
@@ -45,13 +45,13 @@ class Game {
           return `You tried to feed the ${direction} troll without a ${requiredItem}. The troll is not pleased. Game Over.`;
         }
   
-        // Success: feed and distract troll
+        
         this.distractedTrolls.add(direction);
         this.inventory.delete(requiredItem);
         const capitalDir = direction.charAt(0).toUpperCase() + direction.slice(1);
         return `You have fed the ${direction} troll with a ${requiredItem}. It is distracted! (${this.distractedTrolls.size}/${this.requiredTrollCount})\nYou have passed the ${capitalDir} bridge safely.`;
   
-      // Escape command
+
       } else if (command === "escape island") {
         if (this.distractedTrolls.size === this.requiredTrollCount) {
           this.gameOver = true;
@@ -61,14 +61,14 @@ class Game {
           return "You can't escape yet. Some trolls are still guarding the bridges!";
         }
   
-      // Unknown command
+      
       } else {
         return "Unknown command. Try something like 'pick up beef burger' or 'feed west troll'.";
       }
     }
   }
   
-  // DOM INTERACTION
+  
   const game = new Game();
   const input = document.getElementById("commandInput");
   const submitBtn = document.getElementById("submitCommand");
@@ -87,7 +87,7 @@ class Game {
     input.value = '';
   }
   
-  // Restart button functionality
+  
   restartButton.addEventListener("click", () => {
     window.location.reload();
   });
