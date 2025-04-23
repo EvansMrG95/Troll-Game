@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Troll Escape Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poetsen+One&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <h1>🧌 Troll Escape Game</h1>
+  <p><b>The aim of the game is to feed all 4 trolls hiding under the bridges to the North, South, West and East of the island to distract them so you can escape.</b></p>
+  <p>Type commands like "pick up sandwich" "feed north troll" and "escape island"</p>
+
+  <div class="game-box">
+    <input type="text" id="commandInput" placeholder="Type a command..." autofocus>
+    <button id="submitCommand">Submit</button>
+    <div class="message" id="message">Find items and distract the trolls to escape.</div>
+    <button id="restartButton" style="display: none;">Restart Game</button>
+  </div>
+
+  <div> 
+    <p>Hints</p>
+    <ul style="list-style-type: none;">
+        <li>North troll steals the farmers chickens but only eats the legs</li>
+        <li>East troll is a vegetarian</li>
+        <li>West troll is partial to a sandwich</li>
+        <li>South troll likes burgers in the flavour of the nearby cows</li>
+    </ul>
+  </div>
+
+ 
+
+  <script src="script.js"></script>
+</body>
+</html>
